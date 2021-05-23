@@ -1,19 +1,48 @@
-import React from "react"
+import moment from "moment";
+import React, { useState } from "react"
+import { getWeather } from "./api"
 
 
-const Weather = (props) => {
+const Weather = () => {
+    const [city, setCity] = useState('');
+    const [weather, setWeather] = useState({});
+
+    const search = async (e) => {
+        if (e.key == 'Enter') {
+            const data = await getWeather(city)
+            setWeather(data);
+            setCity('');
+        }
+
+    }
+
     return (
         <div>
-            {props.city &&
+            <input type="text" placeholder="search" value={city} onChange={(e) => setCity(e.target.value)} onKeyPress={search} />
+            {weather.main && (
                 <div>
-                    <p>Местоположение: {props.city}, {props.country}</p>
-                    <p>Температура: {props.temp}</p>
-                    <p>Восход: {props.sunrise}</p>
-                    <p>Закат: {props.sunset}</p>
-                    <p>Давление: {props.pressure}</p>
+                    <div>
+                        {weather.name}, {weather.sys.country}
+                    </div>
+                    <div>
+                       temp: {Math.round(weather.main.temp)}
+                        <span>&deg;C</span>
+                    </div>
+                    <div>
+                        feels like: {Math.round(weather.main.feels_like)}
+                        <span>&deg;C</span>
+                    </div>
+                    <div>
+                        pressure: {weather.main.pressure}
+                    </div>
+                    <div>
+                       Sunset: {moment(weather.sys.sunset).format('LT')}
+                    </div>
+                    <div>
+                       Hunidity: {weather.main.humidity}
+                    </div>
                 </div>
-            }
-            <p>{props.error}</p>
+            )}
         </div>
     )
 }
