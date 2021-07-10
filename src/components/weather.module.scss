@@ -1,72 +1,91 @@
 .maincontent{
-    display: flex;
-     flex-direction: column;
-    // align-items: center;
-    justify-content: center;
-    height: 100vh;    
-    // padding-top: 50px;
-    background-image: url(https://img1.akspic.ru/originals/7/1/9/9/4/149917-gora-alpy-priroda-dikaya_mestnost-nebo-1920x1080.jpg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;    
+  background-image: url(https://img1.akspic.ru/originals/7/1/9/9/4/149917-gora-alpy-priroda-dikaya_mestnost-nebo-1920x1080.jpg);
 }
+
 .field{
-    padding-bottom: 20px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+  padding-bottom: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
+
 input{
-    width: 50%;
-    height: 50px;
-    // width:650px;
-    // height: 55px;
-    border-radius: 10px;
-    border:none;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
-    // background:rgb(240, 240, 240) ;
-    background: rgba(70, 70, 70, 0.3);
-    color:honeydew;
-    font-size: 25px;
-    text-align: center;
+  width: 40%;
+  height: 50px;
+  border-radius: 10px;
+  border:none;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  background: rgba(92, 92, 92, 0.3);
+  color:honeydew;
+  font-size: 25px;
+  text-align: center;
 }
- .container{
-     display: flex;
-     justify-content: center;
-//     // display: flex;
-//     // justify-content: center;
 
+ input::placeholder{
+   color:white;
+ }
+
+.container{
+  display: flex;
+  justify-content: center;
 }
+
 .main{
-    display: flex;
-     justify-content: center;
-    //  align-items: center;
-    font-size: 50px;
-}
-.main img{
-    width: 50px;
-}
-  .info{
-    //   padding: 20px;
-      display: flex;
-    //   align-items: center;
-      flex-direction: column;
-    //   border: 2px solid red;
-    border-radius: 10px;
-      width: 50%;
-      height: 120%;
-      background: rgba(0, 0, 0, 0.3); 
-      color:aliceblue;
-    //   font-size: 30px;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 45px;
+  border-bottom: 1px solid rgba(34, 34, 34, 0.3);
+  div{
+    font-size: 80px;
   }
+  img{
+    width: 80px;
+  }
+}
+
+.info{
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  width: 50%;
+  height: 110%;
+  background: rgba(0, 0, 0, 0.3); 
+  color:aliceblue;
+}
 
 .datamain{
     display: flex;
     justify-content: space-evenly;
+    font-size: 30px;
 }
 
-  .datd{
-     font-size: 30px;
-  }
-  .dat{
-    font-size: 30px;
 
+@media(max-width:500px){
+  .info{
+    width: 90%;
+  }  
+  input{
+    width: 70%;
+    font-size: 18px;
+  } 
+  .main{
+    font-size: 30px;
+    div{
+      font-size: 60px;
+    }
+    img{
+      width: 60px;
   }
+}
+  .datamain {
+    color: #ffffff;
+    font-size: 18px;
+    text-align: center;
+  }
+}
+
