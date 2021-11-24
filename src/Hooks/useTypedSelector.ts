@@ -1,4 +1,4 @@
-import { RootReducerType } from './../Redux/Store';
+import { RootReducerType } from '../Redux/Store';
 import { TypedUseSelectorHook, useSelector } from 'react-redux';
 
 

@@ -1,14 +1,9 @@
-import React from "react"
 import Weather from "./components/Weath"
 
-
-
-
-const App = ()=>{
-  return(
+const App = () => {
+  return (
     <div>
-      {/* <Weather/> */}
-      <Weather/>
+      <Weather />
     </div>
   )
 }

@@ -1,14 +1,17 @@
 export const GET_WEATHER = "GET_WEATHER"
 export const IS_FETCHING = "IS_FETCHING"
+
 type GetWeatherActionType = {
     type: typeof GET_WEATHER
     payload: WeatherData
 }
 type SetIsFetchingActionType = {
     type: typeof IS_FETCHING
+    loading: boolean
 }
 
 export type WeatherAction = GetWeatherActionType|SetIsFetchingActionType
+
 
 export type Weather = {
     id: number
@@ -27,14 +30,17 @@ export type WeatherData = {
     name: string
     sys: {
         country: string
-        sunrise: number
+        sunrise: number 
         sunset: number
         id:number
+    }
+    wind: {
+        speed: number,
     }
     weather: Weather[]
 }
 
 export type WeatherState={
-    data: WeatherData|null
+    seaFilm: Array<WeatherData>
     loading: boolean
 }
