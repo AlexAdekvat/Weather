@@ -5,7 +5,6 @@ import loader from './../Assets/loader.svg'
 const Preloader = () => {
     return (
         <div style={{height: 500, width: 500, display: 'flex', justifyContent:'center', alignItems: 'center' }}>
-            {/* <h1 style={{color: 'red'}}>Loding</h1> */}
              <img src={loader} alt="loader"/> 
         </div>
     )
