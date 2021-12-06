@@ -11,7 +11,7 @@ import { WeatherData } from '../Types/Types'
 
 
 const Weather: FC = () => {
-    const [city, setCity] = useState('minsk');
+    const [city, setCity] = useState('');
     const search = useSelector<RootReducerType, Array<WeatherData>>(state => state.weather.seaFilm);
     const loading = useSelector<RootReducerType>(state => state.weather.loading);
 
@@ -29,10 +29,8 @@ const Weather: FC = () => {
     return (
         <div className={styles.maincontent}>
             <div className={styles.field}>
-                <input type="text" placeholder="Search" value={city} onChange={(e) => setCity(e.target.value)} />
-                {/* <div className={styles.button}> */}
+                <input type="text" placeholder="Search" value={city} onChange={(e) => setCity(e.target.value)} /> 
                 <button className={styles.btn} onClick={handleClick} >Search</button>
-                {/* </div> */}
             </div>
 
             <>
